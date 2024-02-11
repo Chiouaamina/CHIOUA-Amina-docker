@@ -6,9 +6,9 @@ services:
       - "3306:3306"
     environment:
       MYSQL_ROOT_PASSWORD: P@ssw0rd
-      MYSQL_USER: product_user
-      MYSQL_PASSWORD: product_user_password
-      MYSQL_DATABASE: product
+      MYSQL_USER: student_user
+      MYSQL_PASSWORD: student_user_password
+      MYSQL_DATABASE: student
 
   spring-boot-app:
       build:
@@ -19,9 +19,9 @@ services:
       depends_on:
         - mysql
       environment:
-        SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/product
-        SPRING_DATASOURCE_USERNAME: product_user
-        SPRING_DATASOURCE_PASSWORD: product_user_password
+        SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/student
+        SPRING_DATASOURCE_USERNAME: student_user
+        SPRING_DATASOURCE_PASSWORD: student_user_password
 
   react-app:
       build:
